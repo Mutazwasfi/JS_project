@@ -1,0 +1,22 @@
+body{
+  background: rgb(41,238,229);
+background: -moz-linear-gradient(90deg, rgba(41,238,229,1) 2%, rgba(50,38,221,1) 86%);
+background: -webkit-linear-gradient(90deg, rgba(41,238,229,1) 2%, rgba(50,38,221,1) 86%);
+background: linear-gradient(90deg, rgba(41,238,229,1) 2%, rgba(50,38,221,1) 86%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#29eee5",endColorstr="#3226dd",GradientType=1);
+}
+html , body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.cord{
+  width: 60vw;
+  background-color: white;
+  margin: auto auto;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgb(132, 132, 132);
+  height: 90vh;
+}
