@@ -1,22 +1,81 @@
-body{
-  background: rgb(41,238,229);
-background: -moz-linear-gradient(90deg, rgba(41,238,229,1) 2%, rgba(50,38,221,1) 86%);
-background: -webkit-linear-gradient(90deg, rgba(41,238,229,1) 2%, rgba(50,38,221,1) 86%);
-background: linear-gradient(90deg, rgba(41,238,229,1) 2%, rgba(50,38,221,1) 86%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#29eee5",endColorstr="#3226dd",GradientType=1);
-}
-html , body{
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
+:root {
+  /* variables to store the colors we will use */
+  --Gradient-dark-color-1: #243b55;
+  --Gradient-dark-color-2: #141E30;
+  --Gradient-light-color-1: #4a5f77;
+  --Primery-light-color-1: #ffffff;
+  --shadow-light-color: #787878;
 }
 
-.cord{
-  width: 60vw;
-  background-color: white;
-  margin: auto auto;
-  border-radius: 50px;
-  box-shadow: 0 0 10px rgb(132, 132, 132);
-  height: 90vh;
+/* a class for the gradient effect we will use -which is 'Royal' gradient*/
+.graindent {
+  background: linear-gradient(to right, var(--Gradient-dark-color-1), var(--Gradient-dark-color-2));
 }
+
+/* giving the body and html a width and hight of 100% to take all the avaliable space while hidding any extra ovverflow and choose the Exo font */
+html , body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body{
+  font-family: 'Exo 2', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registrationFormContainer{
+  width: 65vw;
+  height: 80vh;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-content: center;
+  justify-items: center;
+  background-color: var(--Primery-light-color-1);
+  box-shadow: -5px 10px 10px -3px var(--shadow-light-color);
+  position: relative;
+}
+.registrationFormContainer .virtvalLine {
+  border-left: 5px solid var(--shadow-light-color);
+  height: 80%;
+  border-radius: 10px;
+  position:absolute;
+  left: 35%;
+  top: 10%;
+}
+
+.registrationFormContainer .firstHalf{
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.registrationFormContainer .firstHalf .logo{
+  font-size: min(12vmin , 60px);
+  font-weight: 600;
+}
+.registrationFormContainer .firstHalf .Pagename{
+  font-size: min(6vmin , 30px);
+  padding: 10px;
+  box-shadow: -5px 0 0 -4px var(--shadow-light-color);
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+  .registrationFormContainer .virtvalLine {
+    display: none;
+  }
+  .registrationFormContainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+  }
+  .registrationFormContainer .firstHalf{
+    gap:2rem;
+  }
+  }
