@@ -1,0 +1,108 @@
+/* Start navbar */
+
+.navbar{
+    background-color: rgb(12, 21, 79);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed; 
+    width: 100%;
+}
+
+.navbar-Logo img {
+    width: 100px;
+    height: 100px;
+}
+
+#navbar-Brand{
+    font-size: 60px;
+    margin-left: 250px;
+    color: rgb(240, 190, 42);
+}
+
+.navbar-Menu{
+    list-style: none;
+    display: flex;
+    /* margin: 0%; */
+    padding-right: 200px;
+}
+
+.navbar-Menu li{
+    margin-left: 60px;
+    font-size: 28px;
+}
+
+.navbar-Menu li:hover {
+    color: rgb(240, 190, 42);
+    cursor: pointer;
+}
+
+/* End navbar */
+
+
+
+
+
+/* Strat footer */
+
+.footer{
+    background-color: rgb(12, 21, 79);
+     color: white;
+     display: flex;
+     justify-content: space-between;
+}
+
+.last{
+    padding: 20px;
+}
+
+.info{
+    padding: 20px;
+    font-size: 20px;
+}
+
+.info a{
+    color: white;
+    margin: 30px;
+}
+
+.info a:hover{
+ color:  rgb(240, 190, 42);
+}
+
+/* End footer */
+
+
+
+/* Start media querry for navbar */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        padding: 20px;
+        position: fixed; 
+        width: 100%;
+
+    }
+
+    #navbar-Brand {
+        margin-left: 0;
+        margin-bottom: 20px;
+        font-size: 40px;
+    }
+
+    .navbar-Menu {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .navbar-Menu li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+}
+
+/* End media querry for navbar */ 
