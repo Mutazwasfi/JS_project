@@ -7,6 +7,10 @@
   --shadow-light-color: #787878;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* a class for the gradient effect we will use -which is 'Royal' gradient*/
 .graindent {
   background: linear-gradient(to right, var(--Gradient-dark-color-1), var(--Gradient-dark-color-2));
