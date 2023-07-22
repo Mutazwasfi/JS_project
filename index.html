@@ -16,17 +16,57 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/49fd0aae10.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="style.css">
   <script defer src="main.js"></script>
 </head>
 <body class="graindent">
     <section class="registrationFormContainer">
       <div class="firstHalf">
-        <div class="logo">Quizsh</div>
-        <div class="Pagename">Sign up</div>
+        <div class="logo"><span>Q</span>uizsh</div>
+        <div class="Pagename">
+          Register</div>
       </div>
-      <div class="virtvalLine"></div>
-      <div class="SecondHalf"></div>
+      <div class="SecondHalf">
+        <div class="inpRow">
+          <div>
+            <input type="text" id="name" placeholder="Enter You're Name">
+          </div>
+          <div>
+            <input type="text" id="userName" placeholder="Enter User Name">
+          </div>
+        </div>
+        <div class="inpRow fullRow">
+          <div>
+            <input type="text" id="email" placeholder="Enter You're Email">
+          </div>
+        </div>
+        <div class="inpRow">
+          <div>
+            <select name="Gender" id="gender">
+              <option value="default">select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div>
+            <input type="date" id="BirthDate" placeholder="Enter Your Birth Date">
+          </div>
+        </div>
+        <div class="inpRow fullRow">
+          <div>
+            <select name="position" id="position">
+              <option value="default">Job Position</option>
+              <option value="ui-developer">UI Developer</option>
+              <option value="ui-designer">UI Designer</option>
+              <option value="backend-developer">Backend Developer</option>
+            </select>
+          </div>
+        </div>
+        <div class="SignBtnDiv">
+          <a href=""><input type="button" class="submitBtn graindent2" value="Sign Up"></a>
+        </div>
+      </div>
     </section>
 >>>>>>> 5393801680dd585162d21a078c625ea97189f1fe
 </body>
