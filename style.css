@@ -10,6 +10,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* a class for the gradient effect we will use -which is 'Royal' gradient*/
