@@ -1,11 +1,11 @@
 // Function to display results in the correct-results and wrong-results div elements
 function displayResultsInDiv() {
-    const correctResultsDiv = document.getElementById('correct-results');
-    const wrongResultsDiv = document.getElementById('wrong-results');
+    const correctResultsDiv = document.getElementsByClassName('corQ');
+    const wrongResultsDiv = document.getElementsByClassName('wrongQ');
   
     // Retrieve results from local storage
-    const correctAnswersJSON = localStorage.getItem('correct_answers');
-    const wrongAnswersJSON = localStorage.getItem('wrong_answers');
+    const correctAnswersJSON = localStorage.getItem('corQ');
+    const wrongAnswersJSON = localStorage.getItem('wrongQ');
   
     const correctAnswers = JSON.parse(correctAnswersJSON) || [];
     const wrongAnswers = JSON.parse(wrongAnswersJSON) || [];
