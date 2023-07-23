@@ -18,17 +18,13 @@
 }
 /* a second graindent2 just for the button because the prevouse wasnt visable  */
 .graindent2 {
-  background: linear-gradient(
-    to right,
-    #2b487d,
-    var(--Gradient-dark-color-2)
-  );
+  background: linear-gradient(to right, #2b487d, var(--Gradient-dark-color-2));
 }
 /* sued the border-box proprety to get a better padding */
-* { 
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
-   box-sizing: border-box; 
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Exo 2", sans-serif;
 }
 
@@ -124,15 +120,15 @@ body {
 }
 
 /*  */
-.submitBtn{
+.submitBtn {
   padding-left: 3vmin;
   padding-right: 3vmin;
 }
 
 /* width of the two inputs one row  */
-.registrationFormContainer .SecondHalf .inpRow> div {
+.registrationFormContainer .SecondHalf .inpRow > div {
   position: relative;
-  width: 48% ;
+  width: 48%;
 }
 
 /* width of the one inputs one row  */
@@ -149,14 +145,13 @@ input {
   font-weight: 600;
   padding: 2.2vmin 2vmin;
   width: 100%;
-  transition: box-shadow .3s;
+  transition: box-shadow 0.3s;
 }
 
-input:focus{
+input:focus {
   outline: none;
   box-shadow: 0 0 5px var(--shadow-light-color);
 }
-
 
 input::placeholder {
   color: var(--shadow-light-color);
@@ -174,9 +169,8 @@ select {
   padding: 2.2vmin 2vmin;
   width: 100%;
   border-right: 16px solid transparent;
-  transition: box-shadow .3s;
+  transition: box-shadow 0.3s;
 }
-
 
 select:focus {
   outline: none;
@@ -193,22 +187,32 @@ select option:checked {
   font-weight: bold;
 }
 
-input[type='button']{
+input[type="button"] {
   cursor: pointer;
   color: var(--Primery-light-color-1);
-  transition: transform .3s,box-shadow .3s ;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-input[type='button']:hover{
+input[type="button"]:hover {
   transform: translateY(3px);
   box-shadow: 0 0 10px var(--shadow-light-color);
 }
-input:hover{
+input:hover {
   box-shadow: 0 0 3px var(--shadow-light-color);
 }
-select:hover{
+select:hover {
   box-shadow: 0 0 3px var(--shadow-light-color);
 }
 
+.alert {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 0.7vw;
+  color: var(--error-color);
+  & i {
+    font-size: 1.3vw !important;
+  }
+}
 
 @media only screen and (max-width: 920px) {
   .registrationFormContainer::before {
@@ -222,31 +226,19 @@ select:hover{
   .registrationFormContainer .firstHalf {
     gap: 2rem;
   }
-  .registrationFormContainer .SecondHalf >div div{
+  .registrationFormContainer .SecondHalf > div div {
     padding-bottom: 10px;
   }
-  .registrationFormContainer .SecondHalf .inpRow{
+  .registrationFormContainer .SecondHalf .inpRow {
     flex-direction: column;
     align-items: center;
   }
-  .registrationFormContainer .SecondHalf .inpRow div{
+  .registrationFormContainer .SecondHalf .inpRow div {
     width: 100%;
   }
-
 }
-@media only screen and (max-height: 900px ) and (max-width: 900px) {
-  .registrationFormContainer{
+@media only screen and (max-height: 900px) and (max-width: 900px) {
+  .registrationFormContainer {
     height: 90vh;
-  }
-}
-
-.alert{
-  display: flex;
-  align-items: center;
-  position: relative;
-  font-size: .7vw;
-  color: var(--error-color);
-  & i{
-    font-size: 1.3vw !important;
   }
 }

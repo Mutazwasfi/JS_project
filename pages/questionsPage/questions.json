@@ -1,0 +1,58 @@
+{
+  "quiz_1": [
+    {
+      "question_1": {
+        "question_content": "What is the result of 2 + 2?",
+        "options": ["4", "3", "5", "6"]
+      }
+    },
+    {
+      "question_2": {
+        "question_content": "What is the result of '5' + 2?",
+        "options": ["52", "7", "2", "NaN"]
+      }
+    },
+    {
+      "question_3": {
+        "question_content": "What is the correct syntax to declare a variable in JavaScript?",
+        "options": ["var x;", "variable x;", "v x;", "const x;"]
+      }
+    },
+    {
+      "question_4": {
+        "question_content": "What does DOM stand for?",
+        "options": ["Document Object Model", "Display Object Model", "Data Object Model", "Document Order Model"]
+      }
+    },
+    {
+      "question_5": {
+        "question_content": "What method is used to add an element at the end of an array?",
+        "options": ["push()", "pop()", "shift()", "unshift()"]
+      }
+    }
+  ],
+  "quiz_2": [
+    {
+      "question_1": {
+        "question_content": "What does HTML stand for?",
+        "options": ["Hypertext Markup Language", "Hyper Tool Markup Language", "High Text Markup Language", "Hyper Text Marking Language"]
+      }
+    }
+  ],
+  "quiz_3": [
+    {
+      "question_1": {
+        "question_content": "What does CSS stand for?",
+        "options": ["Cascading Style Sheets", "Colorful Style Sheets", "Computer Style Sheets", "Creative Style Sheets"]
+      }
+    }
+  ],
+  "quiz_4": [
+    {
+      "question_1": {
+        "question_content": "What is the plural form of 'child'?",
+        "options": ["children", "childs", "childen", "child's"]
+      }
+    }
+  ]
+}
