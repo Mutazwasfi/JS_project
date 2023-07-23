@@ -2,7 +2,7 @@
     /* variables to store the colors we will use */
     --Gradient-dark-color-1: #243b55;
     --Gradient-dark-color-2: #141e30;
-    --Gradient-light-color-1: #d8dfe5;
+    --Gradient-light-color-1: #e8ecf1;
     --Primery-light-color-1: #ffffff;
     --shadow-light-color: #787878;
     --error-color: #e91429;
@@ -32,51 +32,56 @@
 
 /* Start navbar */
 
-.navbar {
-    background-color: rgb(7, 10, 82);
-    padding: 1% 10%;
-    margin: 1;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+
+nav {
+  height: 3.5rem;
+  background-color: var(--Primery-light-color-1);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+nav .contant {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar-Logo {
-    width: 15%;
+nav .contant .signinOptions {
+  display: flex;
+  width: min(15%, 120px);
+  justify-content: space-between;
+  white-space: nowrap;
+}
+nav .contant .signinOptions div{
+  transition: transform .3s, text-shadow .3s;
+}
+nav .contant .signinOptions div:hover{
+  transform: translateY(10%);
+  text-shadow: -1px 1px 1px var(--shadow-light-color);
 }
 
-.navbar-Logo img {
-    width: 2.5rem;
-    height: 2.5rem;
+nav .contant .logo {
+  cursor: default;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: text-shadow .3s ,transform .3s;
 }
 
-.navbar-Brand h1{
-    font-size: 3vw;
-    color: rgb(240, 190, 42);
-}
-.navbar-Brand {
-    padding-top: 3%;
-    padding-left: 1%;
+nav .contant a{
+  text-decoration: none;
 }
 
-.navbar-Menu{
-    width: 20%;
-    display: inline-block;
+nav .contant .logo:hover{
+  text-shadow: -2px 2px 2px var(--shadow-light-color);
 }
 
-.navbar-Menu a{
-    margin: 1%;
-    font-size: 2vw;
-    text-decoration: none;
-}
-
-.navbar-Menu a:hover {
-    color: rgb(240, 190, 42);
-    cursor: pointer;
+nav .contant .logo span {
+  color: var(--Gradient-dark-color-1) !important;
+  font-weight: 800;
 }
 
 /* End navbar */
@@ -85,26 +90,45 @@
  /* This is for the main part of the page */
 .main {
   width: 80%;
-  height: 150vh;
+  height: 200vh;
   border-radius: 20px;
   display: grid;
-  grid-template-rows: 2fr 8fr;
+  grid-template-rows: 3fr 7fr;
   background-color: var(--Primery-light-color-1);
-  box-shadow: -5px 10px 10px -3px var(--shadow-light-color);
+  /* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); */
   margin: 10%;
   padding: 2%;
 }
 
-/* This is for the upper part of the page  */
 .dashBoard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  background-color: var(--Gradient-light-color-1);
+  /* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); */
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+
+}
+
+/* Dashboard Picture  */
+.resultPic {
+ background-image: url(Customer\ Survey-rafiki.svg) no-repeat center /
+ contain;
+ width: 95%;
+ height: 95%;
+
+}
+
+/* This is for the upper part of the page  */
+.dashBoardInfo {
     width: 100%;
     height: 80%;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-content: center;
-    background-color: var(--Gradient-dark-color-1);
-    box-shadow: -5px 10px 10px -3px var(--shadow-light-color);
+    grid-template-rows: 1fr 1fr;
     font-size: 1.5vw;
     padding: 1%;
 }
@@ -112,7 +136,7 @@
 /* This is for the name and sumbit portion  */
 .dashLeft {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: left;
   padding-left: 15%;
@@ -133,27 +157,26 @@
     height: 100%;
     border-radius: 20px;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    background-color: var(--Gradient-dark-color-2);
-    box-shadow: -5px 10px 10px -3px var(--shadow-light-color);
+    background-color: var(--Gradient-light-color-1);
+    /* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); */
     overflow: auto;
     padding: 1%;
+    margin-top: 2%;
   }
 
   /* This is were the correct questions will show up */
   .corQ {
     border-radius: 20px;
-    background-color: green;
-    color: white;
+    background-color: var(--Gradient-light-color-1);
+    color: black;
     font-size: 2vw;
-    box-shadow: -5px 10px 10px -3px var(--shadow-light-color);
     overflow: auto;
     padding: 2%;
     margin: 1% 1% 3% 1%;
   }
 
   /* this is were the wrong questions and their correct answer will show up */
-  .wrongQ {
+  /* .wrongQ {
     border-radius: 20px;
     background-color: red;
     color: white;
@@ -163,26 +186,38 @@
     padding: 2%;
     margin: 1%;
   }
-  
+   */
   /* For the button below the questions review */
   .questionBtn {
     display: flex;
     justify-content: right;
+    margin: 2%;
   }
 
   .homeBtn {
-    width: 20%;
-    border-radius: 20px;
-    font-size: 2vw;
-    box-shadow: -5px 10px 10px -3px var(--shadow-light-color);
+    cursor: pointer;
+    padding: 2% 3%;
     margin: 1%;
+    width: 15%;
+    border-style: none;
+    border-radius: 20px;
+    font-weight: 600;
+    color: var(--Gradient-dark-color-2);
+    background-color: var(--Gradient-light-color-1);
+    transition: transform 0.3s, box-shadow 0.3s;
     }
+
+  .homeBtn button:hover {
+    transform: translate(10%);
+    box-shadow: 0 0 10px var(--Gradient-dark-color-1);
+  }
+  
   /* End main */
 
 /* start footer */
 
 .footer{
-    background-color: rgb(12, 21, 79);
+    background-color: var(--Primery-light-color-1);
     padding: 0.5%;
     padding-left: 5%;
     margin: 10% 10% 0 10%;
@@ -195,7 +230,7 @@
     padding: 10% 5%;
     padding-top: 15%;
     font-size: 1.3vw;
-    color: white;
+    color: var(--Gradient-dark-color-1);
 }
 
 .info{
@@ -204,13 +239,13 @@
 }
 
 .info a {
-    color: white;
+    color: var(--Gradient-dark-color-1);
     margin: 7%;
     margin-top: 10%;
 }
 
 .info a:hover{
- color:  rgb(240, 190, 42);
+ color: var(--shadow-light-color);
 }
 
 /* End footer */
@@ -220,14 +255,30 @@
 
     /* media query for main page */
     .dashBoard {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template: 4fr 1fr / 1fr;
       justify-content: center;
-      flex-wrap: wrap;
       font-size: 1.5vw;
       padding: 1%;
       padding-right: 8%;
-    }
+    } 
+
+
+/* Dashboard Picture  */
+.resultPic {
+  width: 95%;
+  height: 95%;
+ 
+ }
+ 
+ /* This is for the info portion of the Dashboard  */
+ .dashBoardInfo {
+     width: 100%;
+     height: 80%;
+     font-size: 1.5vw;
+     padding: 1%;
+ }
+ 
 
     /* media query for footer */
     .footer {
