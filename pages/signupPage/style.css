@@ -1,0 +1,244 @@
+:root {
+  /* variables to store the colors we will use */
+  --Gradient-dark-color-1: #243b55;
+  --Gradient-dark-color-2: #141e30;
+  --Gradient-light-color-1: #d8dfe5;
+  --Primery-light-color-1: #ffffff;
+  --shadow-light-color: #787878;
+  --error-color: #e91429;
+}
+
+/* a class for the gradient effect we will use -which is 'Royal' gradient*/
+.graindent {
+  background: linear-gradient(
+    to right,
+    var(--Gradient-dark-color-1),
+    var(--Gradient-dark-color-2)
+  );
+}
+/* a second graindent2 just for the button because the prevouse wasnt visable  */
+.graindent2 {
+  background: linear-gradient(to right, #2b487d, var(--Gradient-dark-color-2));
+}
+/* sued the border-box proprety to get a better padding */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Exo 2", sans-serif;
+}
+
+/* giving the body and html a width and hight of 100% to take all the avaliable space while hidding any extra ovverflow and choose the Exo font */
+/* used fontsize 100% to be able to use em as a fint size unit as its better and the best practice so when you zoom in and out the pagee the font react with you */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+/* body display felx to align the signle window (sign in div) in the dad center */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* used the grid display to devide the window to two section the first has 3/7 of the width(as i used grid-template-columns) and the second has 5/7 of the width (to align with the dividing line ) and gave the postion reltive to beable to use absoulte postioned childern components */
+.registrationFormContainer {
+  width: 65vw;
+  height: 80vh;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  background-color: var(--Primery-light-color-1);
+  box-shadow: -5px 10px 10px -3px var(--shadow-light-color);
+  position: relative;
+  padding: 3rem;
+}
+
+/*this for the line in the middle of the sections to give it a touch of ...idk and its postioned absolutely so it does take a space in the window it self (not ruine the grid)   */
+.registrationFormContainer::before {
+  content: "";
+  border-left: 5px solid var(--shadow-light-color);
+  height: 70%;
+  border-radius: 10px;
+  position: absolute;
+  left: 37%;
+  top: 15%;
+}
+
+/* this is the section on the left  nothing much going on*/
+.registrationFormContainer .firstHalf {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+}
+
+/* used the em font size unit  */
+.registrationFormContainer .firstHalf .logo {
+  font-size: 8.5em;
+  font-weight: 600;
+}
+
+/* colored the first letter with a diffrent color just cz */
+.registrationFormContainer .firstHalf .logo span {
+  color: var(--Gradient-dark-color-1) !important;
+  font-weight: 800;
+}
+
+/* nothing much */
+.registrationFormContainer .firstHalf .Pagename {
+  font-size: 3.5em;
+  padding: 10px;
+  box-shadow: 0 5px 0 -4px var(--shadow-light-color);
+  border-radius: 10px;
+}
+
+/* the second half style .. nothing much */
+.registrationFormContainer .SecondHalf {
+  width: 100%;
+  height: 70%;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* giving each div (row div) a relative width */
+.registrationFormContainer .SecondHalf .inpRow {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+/*  */
+.submitBtn {
+  padding-left: 3vmin;
+  padding-right: 3vmin;
+}
+
+/* width of the two inputs one row  */
+.registrationFormContainer .SecondHalf .inpRow > div {
+  position: relative;
+  width: 48%;
+}
+
+/* width of the one inputs one row  */
+.registrationFormContainer .SecondHalf .fullRow div {
+  height: 100%;
+  width: 100%;
+}
+
+input {
+  border-style: none;
+  border-radius: 20px;
+  background-color: var(--Gradient-light-color-1);
+  color: var(--Gradient-dark-color-1);
+  font-weight: 600;
+  padding: 2.2vmin 2vmin;
+  width: 100%;
+  transition: box-shadow 0.3s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--shadow-light-color);
+}
+
+input::placeholder {
+  color: var(--shadow-light-color);
+  opacity: 0.8;
+  font-size: 100%;
+}
+
+/* Apply the same style on the select input too */
+select {
+  border-style: none;
+  border-radius: 20px;
+  background-color: var(--Gradient-light-color-1);
+  color: var(--shadow-light-color);
+  font-weight: 600;
+  padding: 2.2vmin 2vmin;
+  width: 100%;
+  border-right: 16px solid transparent;
+  transition: box-shadow 0.3s;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--shadow-light-color) !important;
+}
+
+select option[disabled] {
+  color: var(--shadow-light-color);
+  opacity: 0.8;
+  font-size: 100%;
+}
+
+select option:checked {
+  font-weight: bold;
+}
+
+input[type="button"] {
+  cursor: pointer;
+  color: var(--Primery-light-color-1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+input[type="button"]:hover {
+  transform: translateY(3px);
+  box-shadow: 0 0 10px var(--shadow-light-color);
+}
+input:hover {
+  box-shadow: 0 0 3px var(--shadow-light-color);
+}
+select:hover {
+  box-shadow: 0 0 3px var(--shadow-light-color);
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 0.7vw;
+  color: var(--error-color);
+  & i {
+    font-size: 1.3vw !important;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .registrationFormContainer::before {
+    display: none;
+  }
+  .registrationFormContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+  }
+  .registrationFormContainer .firstHalf {
+    gap: 2rem;
+  }
+  .registrationFormContainer .SecondHalf > div div {
+    padding-bottom: 10px;
+  }
+  .registrationFormContainer .SecondHalf .inpRow {
+    flex-direction: column;
+    align-items: center;
+  }
+  .registrationFormContainer .SecondHalf .inpRow div {
+    width: 100%;
+  }
+}
+@media only screen and (max-height: 900px) and (max-width: 900px) {
+  .registrationFormContainer {
+    height: 90vh;
+  }
+}
