@@ -149,80 +149,12 @@ justify-content: center;
 
 /* This is for score portion  */
 
-/* .dashRight {
+.dashRight {
 display: grid;
 align-items: center;
 justify-content: center;
 padding-right: 15%;
-} */
-
-.dashRight {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(.9);
-  width: 500px;
-  background: transparent;
-  border: 2px solid #c40094;
-  border-radius: 6px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: .3s ease;
-}
-
-.dashRight.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.dashRight h2 {
-  font-size: 52px;
-}
-
-.dashRight .percentage-container {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 0 40px;
-}
-
-.percentage-container .circular-progress {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  background: conic-gradient(#c40094 3.6deg, rgba(255, 255, 255, .1) 0deg);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.percentage-container .circular-progress::before {
-  content: '';
-  position: absolute;
-  width: 210px;
-  height: 210px;
-  background: #09001d;
-  border-radius: 50%;
-}
-
-.circular-progress .progress-value {
-  position: relative;
-  font-size: 45px;
-  font-weight: 600;
-}
-
-.percentage-container .score-text {
-  font-size: 26px;
-  font-weight: 600;
-  margin-top: 20px;
-}
+} 
 
 /* This were we display the question for Anaylsis */
 .Questions {
@@ -246,20 +178,8 @@ padding-right: 15%;
   overflow: auto;
   padding: 2%;
   margin: 1% 1% 3% 1%;
-}
+} 
 
-/* this is were the wrong questions and their correct answer will show up */
-/* .wrongQ {
-  border-radius: 20px;
-  background-color: red;
-  color: white;
-  font-size: 2vw;
-  box-shadow: -5px 10px 10px -3px var(--shadow-light-color);
-  overflow: auto;
-  padding: 2%;
-  margin: 1%;
-}
- */
 
 /* the Buttons below the questions section */
 
@@ -267,7 +187,6 @@ padding-right: 15%;
   display: flex;
   justify-content: space-between;
 }
-
 
 /* For the button below the questions review */
 
@@ -298,43 +217,6 @@ button {
 }
 
 /* End main */
-
-/* start footer */
-
-.footer{
-  background-color: var(--Primery-light-color-1);
-  padding: 0.5%;
-  padding-left: 5%;
-  margin: 10% 10% 0 10%;
-  width: 80%;
-  display: grid;
-  grid-template-columns: 4fr 6fr;
-}
-
-.last{
-  padding: 10% 5%;
-  padding-top: 15%;
-  font-size: 1.3vw;
-  color: var(--Gradient-dark-color-1);
-}
-
-.info{
-  padding: 9%;
-  font-size: 1.7vw;
-}
-
-.info a {
-  color: var(--Gradient-dark-color-1);
-  margin: 7%;
-  margin-top: 10%;
-}
-
-.info a:hover{
-color: var(--shadow-light-color);
-}
-
-/* End footer */
-
 
 @media only screen and (max-width: 920px) {
 
