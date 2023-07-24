@@ -134,6 +134,52 @@
         background-color: white;
         color: #243b55;
       } */
+      .pup2{
+        border: solid black 2px;
+        width: 30rem;
+        background-color: #787878;
+        }
+      
+
+        /* input[type="password"] {
+  width: 100px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type="password"]:focus {
+  width: 250px;
+}
+input[type="email"] {
+  width: 100px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type="email"]:focus {
+  width: 250px;
+} */
+input {
+  border-style: none;
+  border-radius: 20px;
+  background-color: var(--Gradient-light-color-1);
+  color: var(--Gradient-dark-color-1);
+  font-weight: 600;
+  padding: 2.2vmin 2vmin;
+  width: 20%;
+  transition: box-shadow 0.3s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--shadow-light-color);
+}
+
+input::placeholder {
+  color: var(--shadow-light-color);
+  opacity: 0.8;
+  font-size: 100%;
+}
+
+
     </style>
         <!-- ----------------------------------------------text header ---------------------------------------------->
 
@@ -284,6 +330,20 @@
 
       </div>
     </div>
+    <!-- ==============================================pup2============================================= -->
+    
+    <div>
+
+        <input type="text" id="userName" placeholder="Enter User Name">
+      </div>
+      <div>
+        <input type="password" id="password" placeholder="Enter You're password">
+      </div>
+      
+      <div class="SignBtnDiv">
+        <a href=""><input type="button" class="submitBtn graindent2" value="Sign Up"></a>
+      </div>
+      
   </body>
   <script src="main.js"></script>
 </html>

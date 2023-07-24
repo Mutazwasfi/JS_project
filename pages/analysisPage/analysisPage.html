@@ -1,60 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizish</title>
-    <script src="https://kit.fontawesome.com/6487c144b2.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizsh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/49fd0aae10.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="analysisPage.css">
 </head>
 
 <body class="graindent">
 
 <!-- Start navbar -->
     
-<header>
-    <div class="navbar">
-
-        <div class="navbar-Logo">
-            <img src="Screenshot 2023-07-21 210551.png" alt="logo" class="logo">
-        </div>
-
-        <div class="navbar-Brand">
-            <h1>Quizer</h1>
-        </div>
-        
-        <div class="navbar-Menu">
-            <a href="log in">log in</a>
-            <a href="sign up">sign up</a>
-        </div>
-
+<nav>
+    <div class="contant">
+      <div class="logo"><span>Q</span>uizsh</div>
+      <div class="signinOptions">
+        <div>Welcome</div>
+        <div><span class="fName"></span></div>
+      </div>
     </div>
-
-</header>
+  </nav>
 <!-- End navbar -->
 
 <main>
     <div class="main">
 
-        <!-- DashBoard -->
-
         <div class="dashBoard">
-            <div class="dashLeft">
-                <div class="dashName">
-                    <h2>Name: Mu'taz Abo Yaqoup</h2>
+
+            <!-- DashBoard Pic-->
+    
+            <div class="resultPic">
+                <img src="../../resoruces/images/dashboardpic.svg" alt="picture">
+            </div>
+    
+            <!-- DashBoard -->
+    
+            <div class="dashBoardInfo">
+                <div class="dashLeft">
+                    <div class="dashName">
+                        <h2 class="attemptName"></h2>
+                    </div>
+                    <div class="dashDate">
+                        <h2>attempted on: <Span class="attemptDate"></Span></h2>
+                    </div>
                 </div>
-                <div class="dashDate">
-                    <h2>sumbitted on: 23/05/1995</h2>
+
+                <div class="dashRight">
+                    <h2>Quiz Result!</h2>
+                    <div class="percentage-container">
+                    <div class="circular-progress">
+                        <span class="progress-value"></span>
+                    </div>
+
+                    <span class="score-text"></span>
+                    </div>
                 </div>
             </div>
-            <div class="dashRight">
-                <div class="dashScore">
-                    <h2>7/15</h2>
-                </div>
-            </div>
+
         </div>
+
 
         <!-- Question Review section -->
         
@@ -75,9 +87,7 @@
                 Mollitia, quo excepturi, veniam earum sit porro maxime, maiores quaerat consequuntur amet dolores. Aliquid neque quasi aperiam doloribus a, cum voluptatum sapiente hic nostrum, maiores amet rerum modi enim obcaecati.
                 Quia corrupti corporis non incidunt laboriosam possimus magni quod maxime eius, dolor quo deserunt dolorem voluptate impedit! Quis vitae accusamus nam debitis, incidunt quod mollitia. Minima consequatur excepturi pariatur accusamus!
                 Perferendis sequi aliquid ducimus et expedita, maxime ex, placeat nemo id ea ullam quas esse corrupti ipsa iste. Reiciendis soluta quam, natus ipsa nulla fuga consequuntur provident tempore pariatur quasi!
-            </div>
-
-            <div class="wrongQ">
+            
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur ullam labore, officiis asperiores rerum sint accusamus non aliquam quae earum doloremque praesentium accusantium, omnis nisi. Nisi magni assumenda architecto velit.
                 Exercitationem dignissimos possimus consectetur, ea corporis necessitatibus quo error nihil ipsam pariatur recusandae perferendis. Facere, molestiae. Quos ea error assumenda facilis nemo. Deleniti tenetur magnam rem hic maxime debitis sint!
                 Dolore quaerat adipisci veniam tenetur, amet blanditiis atque facere voluptatibus magni eum aliquam vitae nesciunt dolores! Expedita modi distinctio et, aliquid sint eum quod dolorem libero, nihil totam delectus exercitationem?
@@ -96,14 +106,21 @@
             </div>
 
         </div>
-        <div class="questionBtn">
-            <button type="button" class="homeBtn"><a href="#" target="_blank"></a>Home</button>
+
+        <div class="btns">
+            <div class="resultBtnDiv">
+                <button type="button" class="resultBtn"">Results</button>
+            </div>
+    
+            <div class="logOutBtnDiv">
+                <button type="button" class="logOutBtn"></a>Done!</button>
+            </div>
         </div>
     </div>
 </main>
 
 <!-- Start footer -->    
-<footer class="footer">
+<!-- <footer class="footer">
 
 <div class="last">
     <p> QUZIER web 2023.All<span>&copy;</span>Rights Reserved.</p>
@@ -124,10 +141,10 @@
       
 </div>
 
-</footer>
+</footer> -->
 
 <!-- End footer -->
 
 </body>
-<script src="./main.js"></script>
+<script defer src="analysisPage.js"></script>
 </html>
