@@ -8,19 +8,21 @@ const BD = document.querySelector("#BirthDate");
 const PASSWORD = document.querySelector("#password");
 const SUBMITBTN = document.querySelector(".submitBtn");
 
-let namehasError;
-let userNamehasError;
-let emaihasError;
-let passwordhasError;
-let datehasError;
+let namehasError ;
+let userNamehasError ;
+let emaihasError ;
+let passwordhasError ;
+let datehasError ;
 
 // add an event function for the name input to activate when leaveing the input box (blur or lose fouce)
 NAME.addEventListener("blur", (e) => validateName(e.target));
 // a fucntion that validate the  name
 function validateName(e) {
   // check if the input field was left empty by invoking checkEmpty function
-  if (checkEmpty(e)) return;
-
+  if (checkEmpty(e)){
+    namehasError = true;
+    return;
+  } 
   // this is the pattren that will check the input name .value and if it finds any match it returns true and if false it alerts the user by invoking alertWrong function
   // and only accpets letters
   let pattern = /^[a-zA-Z]+$/i;
@@ -37,7 +39,10 @@ function validateName(e) {
 //same as the prevouse function but the pattren is diffrent
 USERNAME.addEventListener("blur", (e) => validateUserName(e.target));
 function validateUserName(e) {
-  if (checkEmpty(e)) return;
+  if (checkEmpty(e)){
+    userNamehasError = true;
+    return;
+  } 
 
   let pattern = /^[a-zA-Z0-9_.]+$/i;
   if (!USERNAME.value.match(pattern)) {
@@ -56,7 +61,10 @@ function validateUserName(e) {
 //same as the prevouse function but the pattren is diffrent
 EMAIL.addEventListener("blur", (e) => validateEmail(e.target));
 function validateEmail(e) {
-  if (checkEmpty(e)) return;
+  if (checkEmpty(e)){
+    emaihasError = true;
+    return;
+  } 
 
   let pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   if (!EMAIL.value.match(pattern)) {
@@ -71,6 +79,7 @@ function validateEmail(e) {
 //this is a funtion that validates the date input feilad by inizlaising a new date object from 18 yaers ago
 // and another date object of the given date from the user and if the inputed object is larger than than the 18years ago then he must be less than 18 which is not accepeted
 BD.addEventListener("blur", (e) => validateDate(e.target));
+datehasError = false;
 function validateDate(e) {
   const currentDate = new Date();
   const eighteenYearsAgo = new Date(
@@ -92,7 +101,10 @@ function validateDate(e) {
 //same as the prevouse function but the pattren is diffrent
 PASSWORD.addEventListener("blur", (e) => validatePassword(e.target));
 function validatePassword(e) {
-  if (checkEmpty(e)) return;
+  if (checkEmpty(e)){
+    passwordhasError = true;
+    return;
+  } 
 
   let pattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,16}$/;
   if (!PASSWORD.value.match(pattern)) {
@@ -103,6 +115,8 @@ function validatePassword(e) {
     passwordhasError = true;
     return;
   }
+
+
   if (passwordhasError) passwordhasError = removeError(PASSWORD);
 }
 
@@ -150,7 +164,10 @@ SUBMITBTN.addEventListener("click", (e) => {
       `${newuser.username.toLowerCase()}`,
       JSON.stringify(newuser)
     );
+    localStorage.currentUser = newuser.username.toLowerCase();
+    // localStorage.currentUser = JSON.stringify(newuser.name)
   } else {
+    console.log('falied')
     e.preventDefault();
   }
 });
