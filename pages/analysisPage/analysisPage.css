@@ -88,12 +88,19 @@ font-weight: 800;
 
 
 /* This is for the main part of the page */
+
+ main {
+  width: 100vw;
+  height: 100%;
+} 
+
 .main {
 width: 80%;
 height: 80%;
 border-radius: 20px;
-display: grid;
-grid-template-rows: 1fr 5fr;
+display: flex;
+/* grid-template-rows: 1fr 5fr; */
+flex-direction: column;
 background-color: var(--Primery-light-color-1);
 /* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); */
 margin: 10%;
@@ -142,17 +149,85 @@ justify-content: center;
 
 /* This is for score portion  */
 
-.dashRight {
+/* .dashRight {
 display: grid;
 align-items: center;
 justify-content: center;
 padding-right: 15%;
+} */
+
+.dashRight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(.9);
+  width: 500px;
+  background: transparent;
+  border: 2px solid #c40094;
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s ease;
+}
+
+.dashRight.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.dashRight h2 {
+  font-size: 52px;
+}
+
+.dashRight .percentage-container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0 40px;
+}
+
+.percentage-container .circular-progress {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: conic-gradient(#c40094 3.6deg, rgba(255, 255, 255, .1) 0deg);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentage-container .circular-progress::before {
+  content: '';
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  background: #09001d;
+  border-radius: 50%;
+}
+
+.circular-progress .progress-value {
+  position: relative;
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.percentage-container .score-text {
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 20px;
 }
 
 /* This were we display the question for Anaylsis */
 .Questions {
   width: 100%;
-  height: 80%;
+  height: 100%;
   border-radius: 20px;
   display: none;
   background-color: var(--Gradient-light-color-1);
