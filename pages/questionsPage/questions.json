@@ -1,58 +1,154 @@
 {
-  "quiz_1": [
+  "java": [
     {
-      "question_1": {
-        "question_content": "What is the result of 2 + 2?",
-        "options": ["4", "3", "5", "6"]
-      }
+      "question": "1. What is the output of the following code?<br>\"javascript\nconst arr = [1, 2, 3];\narr.length = 0;\nconsole.log(arr[2]);\n\"",
+      "options": ["c) 3", "a) 1", "d) undefined", "b) 2"],
+      "correct_answer_index": 2
     },
+
     {
-      "question_2": {
-        "question_content": "What is the result of '5' + 2?",
-        "options": ["52", "7", "2", "NaN"]
-      }
-    },
-    {
-      "question_3": {
-        "question_content": "What is the correct syntax to declare a variable in JavaScript?",
-        "options": ["var x;", "variable x;", "v x;", "const x;"]
-      }
-    },
-    {
-      "question_4": {
-        "question_content": "What does DOM stand for?",
-        "options": ["Document Object Model", "Display Object Model", "Data Object Model", "Document Order Model"]
-      }
-    },
-    {
-      "question_5": {
-        "question_content": "What method is used to add an element at the end of an array?",
-        "options": ["push()", "pop()", "shift()", "unshift()"]
-      }
+      "question": "1. What will the following code output?<br>\"javascript\nconst x = 5, y = '10';\nconsole.log(x + y);\n\"",
+      "options": ["a) 510", "b) 15", "c) 510", "d) NaN"],
+      "correct_answer_index": 0
     }
-  ],
-  "quiz_2": [
+    
+    ,
     {
-      "question_1": {
-        "question_content": "What does HTML stand for?",
-        "options": ["Hypertext Markup Language", "Hyper Tool Markup Language", "High Text Markup Language", "Hyper Text Marking Language"]
-      }
+      "question": "3. What is the value of 'result' after the following code execution?<br>\"javascript  let x = 10;  function addY(y) {  return x + y; }   let result = addY(5);\"",
+      "options": ["c) 15", "a) 10", "d) undefined", "b) 5"],
+      "correct_answer_index": 0
     }
-  ],
-  "quiz_3": [
+    ,
     {
-      "question_1": {
-        "question_content": "What does CSS stand for?",
-        "options": ["Cascading Style Sheets", "Colorful Style Sheets", "Computer Style Sheets", "Creative Style Sheets"]
-      }
-    }
-  ],
-  "quiz_4": [
+      "question": "4. What is the purpose of the 'map' method on an array in JavaScript?",
+      "options": [
+        "b) It returns a new array with the same elements as the original array.",
+        "a) It modifies the original array by applying a function to each element.",
+        "d) It filters the array based on a given condition.",
+        "c) It removes duplicate elements from the array."
+      ],
+      "correct_answer_index": 1
+    },
     {
-      "question_1": {
-        "question_content": "What is the plural form of 'child'?",
-        "options": ["children", "childs", "childen", "child's"]
-      }
+      "question": "5. What is the output of the following code?<br>\"javascript\nfunction sayHello() {\n  var greeting = 'Hello';\n  setTimeout(function() {\n    console.log(greeting);\n  }, 1000);\n}\nsayHello();\n\"",
+      "options": ["b) 'undefined'", "a) 'Hello'", "c) ReferenceError", "d) 'null'"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "6. What does the 'Object.freeze()' method do in JavaScript?",
+      "options": [
+        "c) It prevents changes to an object's properties and its nested objects.",
+        "a) It prevents new properties from being added to an object.",
+        "b) It freezes the value of 'this' inside a function.",
+        "d) It converts an object into an immutable data type."
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "7. What is the value of 'result' after the following code execution?<br>\"javascript\nconst name = 'John';\nconst result = (function() {\n  delete name;\n  return name;\n})();\n\"",
+      "options": ["c) ReferenceError", "a) 'John'", "b) null", "d) undefined"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "8. What is the purpose of the 'filter' method on an array in JavaScript?",
+      "options": [
+        "c) It removes elements from the array based on a given condition.",
+        "b) It returns a new array with the same elements as the original array.",
+        "a) It modifies the original array by applying a function to each element.",
+        "d) It sorts the elements of the array in ascending order."
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "9. What is the output of the following code?<br>\"javascript\nconsole.log(typeof NaN);\n\"",
+      "options": ["a) 'number'", "d) 'undefined'", "c) 'NaN'", "b) 'string'"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "10. What does the 'bind' method do on a function object in JavaScript?",
+      "options": [
+        "c) It creates a closure over the function's scope.",
+        "b) It returns a new function with the same code.",
+        "a) It binds the function to a specific value of 'this'.",
+        "d) It adds the function to the global scope."
+      ],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "11. What is the output of the following code?<br>\"javascript\nconst arr = [1, 2, 3];\narr.length = 0;\nconsole.log(arr[2]);\n\"",
+      "options": ["d) undefined", "b) 2", "a) 1", "c) 3"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "12. What does the 'apply' method do on a function object in JavaScript?",
+      "options": [
+        "b) It creates a new instance of the function.",
+        "a) It invokes the function with the specified arguments.",
+        "c) It changes the value of 'this' inside the function.",
+        "d) It returns a new function with the same code."
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "13. What is the value of 'result' after the following code execution?<br>\"javascript\nlet x = 10;\nfunction addY(y) {\n  return x + y;\n}\nlet result = addY(5);\n\"",
+      "options": ["a) 10", "b) 5", "c) 15", "d) undefined"],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "14. What is the purpose of the 'map' method on an array in JavaScript?",
+      "options": [
+        "a) It modifies the original array by applying a function to each element.",
+        "b) It returns a new array with the same elements as the original array.",
+        "d) It filters the array based on a given condition.",
+        "c) It removes duplicate elements from the array."
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "15. What is the output of the following code?<br>\"javascript\nfunction sayHello() {\n  var greeting = 'Hello';\n  setTimeout(function() {\n    console.log(greeting);\n  }, 1000);\n}\nsayHello();\n\"",
+      "options": ["c) ReferenceError", "a) 'Hello'", "b) 'undefined'", "d) 'null'"],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "16. What does the 'Object.freeze()' method do in JavaScript?",
+      "options": [
+        "a) It prevents new properties from being added to an object.",
+        "b) It freezes the value of 'this' inside a function.",
+        "c) It prevents changes to an object's properties and its nested objects.",
+        "d) It converts an object into an immutable data type."
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "17. What is the value of 'result' after the following code execution?<br>\"javascript\nconst name = 'John';\nconst result = (function() {\n  delete name;\n  return name;\n})();\n\"",
+      "options": ["c) ReferenceError", "a) 'John'", "b) null", "d) undefined"],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "18. What is the purpose of the 'filter' method on an array in JavaScript?",
+      "options": [
+        "c) It removes elements from the array based on a given condition.",
+        "b) It returns a new array with the same elements as the original array.",
+        "a) It modifies the original array by applying a function to each element.",
+        "d) It sorts the elements of the array in ascending order."
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "19. What is the output of the following code?<br>\"javascript\nconsole.log(typeof NaN);\n\"",
+      "options": ["a) 'NaN'", "b) 'string'", "c) 'number'", "d) 'undefined'"],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "20. What does the 'bind' method do on a function object in JavaScript?",
+      "options": [
+        "d) It adds the function to the global scope.",
+        "a) It binds the function to a specific value of 'this'.",
+        "b) It returns a new function with the same code.",
+        "c) It creates a closure over the function's scope."
+      ],
+      "correct_answer_index": 1
     }
   ]
 }
+
