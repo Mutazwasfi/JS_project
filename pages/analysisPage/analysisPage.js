@@ -19,6 +19,7 @@ async function retreiveQuestion(str) {
   let response = await fetch("../questionsPage/questions.json");
   let questionFile = await response.json();
   let quizQuestion = questionFile[str];
+  
   // stores the choosen questions indexs in atempt object to be stored later in local storage
   questionsIndices = JSON.parse(localStorage.attempt).questionsIndexes;
   selectedQuestions = questionsIndices.map((e) => quizQuestion[e]);
