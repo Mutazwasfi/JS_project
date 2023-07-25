@@ -243,7 +243,7 @@ main .mainWindow .content .main .dashboard{
   height: 80%;
   border-radius: 20px;
   padding: 1vmin;
-  background-color: #787878;
+  /* background-color: #d7d6d6fc; */
 }
 main .mainWindow .content .main .dashboard .filler{
   height: 2vmin;
@@ -255,8 +255,11 @@ main .mainWindow .content .main .dashboard .questions{
   height: 97%;
   width: 98%;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
+  margin: 0 auto;
   align-items: center;
+  padding: 2vmin;
 }
 .hidden{
   display: none !important;
