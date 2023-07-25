@@ -40,12 +40,12 @@ Thank you for using the Quiz Application!
 
 - Thara'a Bassam - (Scrum Master)
 - Rand AL-Wageei - (Product Owner)
-- Muhammad Shanrani
-- mu'taz Abu Yaquob
+- Muhammad Shabrani
+- Mu'taz Abu Yaquob
 - Mahmoud Aljabali
 
  live link and 
 https://tharaa-bassam.github.io/project/
 
-a GitHub link
-https://github.com/tharaa-bassam/project
+ GitHub link
+https://github.com/tharaa-bassam/projectgit 
