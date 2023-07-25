@@ -1,8 +1,10 @@
 const TakeQuizBtn = document.querySelector(".takeQuiz button");
 const LoginBtn = document.querySelector(".signinOptions .LoginAnchor");
 
-let islogedIn = JSON.parse(localStorage.islogedIn?localStorage.islogedIn:null);
-if (islogedIn && islogedIn != null ) {
+let islogedIn = JSON.parse(
+  localStorage.islogedIn ? localStorage.islogedIn : null
+);
+if (islogedIn && islogedIn != null) {
   let NameDiv = document.createElement("div");
   NameDiv.classList.add("LoginAnchor");
   let firstName = JSON.parse(
@@ -10,7 +12,7 @@ if (islogedIn && islogedIn != null ) {
   ).name;
   let text = document.createTextNode(`Welcome, ${firstName}`);
   NameDiv.appendChild(text);
-  
+
   document.querySelector(".signinOptions").innerHTML = NameDiv.outerHTML;
 } else {
   localStorage.islogedIn = false;
@@ -45,15 +47,15 @@ function handleEsacpe(e) {
       .querySelector("body")
       .removeEventListener("keypress", handleEsacpe);
   }
-  if(e.keyCode == 13){
-    login()
+  if (e.keyCode == 13) {
+    login();
   }
 }
 
 function login() {
   let userName = document.querySelector("#userName");
   let password = document.querySelector("#password");
-  console.log(userName)
+  console.log(userName);
   let profile = localStorage.getItem(userName.value);
   if (profile == null)
     alertWrong(
@@ -61,12 +63,16 @@ function login() {
       "Invalid username. Please enter a valid username or consider registering."
     );
   else {
-    profile = JSON.parse(profile)
-    console.log(profile.password)
+    profile = JSON.parse(profile);
+    console.log(profile.password);
     if (password.value === profile.password) {
       console.log("logedin successfully");
-      localStorage.islogedIn = 'true'
-      window.location.href = "../previewPage/previewPage.html";
+      localStorage.islogedIn = "true";
+      if(profile.PrevouseAttemptedQuiz){
+        window.location.href = "../analysisPage/analysisPage.html"
+      }
+      else
+        window.location.href = "../previewPage/previewPage.html";
     } else
       alertWrong(
         userName,

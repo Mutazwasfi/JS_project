@@ -2,7 +2,7 @@ let islogedIn = JSON.parse(
   localStorage.islogedIn ? localStorage.islogedIn : null
 );
 
-if(JSON.parse(localStorage.attemptInfo? localStorage.attemptInfo:null)!= null)
+if(JSON.parse(localStorage.attemptInfo ? localStorage.attemptInfo:null)!= null)
   window.location.href = '../analysisPage/analysisPage.html'
 
 if (islogedIn && islogedIn != null) {

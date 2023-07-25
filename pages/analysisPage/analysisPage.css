@@ -101,7 +101,7 @@ nav .contant .signinOptions div:hover {
   transform: translateY(10%);
   text-shadow: -1px 1px 1px var(--shadow-light-color);
 }
-nav .contant .logo {
+nav .contant .logo{
   cursor: default;
   font-size: 2rem;
   font-weight: 600;
@@ -124,7 +124,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 main .mainWindow {
   width: 80%;
   height: 90%;
@@ -170,33 +169,20 @@ main .mainWindow .content .dashboard .cols .text{
   flex-direction: column;
   justify-content: space-around;
 }
-main .mainWindow .content .dashboard .cols .score{
-  width: 25vmin;
-  height: 25vmin;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-circle{
-  fill: none;
-  stroke: url(#GradientColor);
-  stroke-width: 2vmin;
-  stroke-dasharray:472;
-  stroke-dashoffset: 472;
-  animation: animate 2s linear forwards;
-}
-.skills{
-  position: relative;
-  background-color: #d3d3d3;
-  border-radius: 50%;
+main .mainWindow .content .dashboard .cols .skills{
+  background-color: #2b487d;
+  /* border-radius: 50% 50%; */
+  padding: 10vmin;
+  border-radius: 40px;
+  font-size: 5vmin;
+  color: var(--Primery-light-color-1);
 }
 main .mainWindow .content .dashboard .buttons{
   display: flex;
   justify-content: space-around;
   padding-top: 10vmin;
 }
-main .mainWindow .content .dashboard .buttons button{
+button{
   cursor: pointer;
   padding: 2.2vmin 0;
   width: 12vw;
@@ -208,7 +194,7 @@ main .mainWindow .content .dashboard .buttons button{
   transition: box-shadow 0.3s, transform 0.3s;
   color: #fff;
 }
-main .mainWindow .content .dashboard .buttons button:hover{
+button:hover{
   transform: translateY(10%);
   box-shadow: 0 0 10px var(--shadow-light-color);
 }
@@ -223,7 +209,7 @@ main .mainWindow .content .main .header{
   width: 100%;
   height: 10%;
   display: flex;
-  justify-content: end;
+  justify-content: space-around;
   align-items: center;
 }
 main .mainWindow .content .main .header .score{
@@ -240,7 +226,7 @@ main .mainWindow .content .main .header .score{
 main .mainWindow .content .main .dashboard{
   width: 100%;
   overflow-y: auto;
-  height: 80%;
+  height: 70vh;
   border-radius: 20px;
   padding: 1vmin;
   /* background-color: #d7d6d6fc; */
@@ -248,7 +234,6 @@ main .mainWindow .content .main .dashboard{
 main .mainWindow .content .main .dashboard .filler{
   height: 2vmin;
 }
-
 main .mainWindow .content .main .dashboard .questions{
   background-color:#fff;
   border-radius: 20px;
@@ -264,7 +249,6 @@ main .mainWindow .content .main .dashboard .questions{
 .hidden{
   display: none !important;
 }
-
 main .mainWindow .content .main .dashboard .questions .question {
   background-color: #fcfcfc;
   width: 70%;
@@ -279,7 +263,6 @@ main .mainWindow .content .main .dashboard .questions .question {
   color: var(--Gradient-dark-color-2);
   box-shadow: 0 0 10px var(--Gradient-light-color-1);
 }
-
 main .mainWindow .content .main .dashboard .questions .options{
     width: 80%;
     height: 50%;
@@ -287,31 +270,29 @@ main .mainWindow .content .main .dashboard .questions .options{
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
     align-items: center;
     justify-items: center;
-  }
+}
 .questions .options .option{
   width: 95%;
   height: 90%;
   display: flex;
-  padding: 1rem;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: min(2.5vmin, 3rem);
   cursor: pointer;
   border-radius: 20px;
+  background-color: #0eb427;
   background-color: var(--secondry-light-color-2);
   color: var(--Gradient-dark-color-2);
   box-shadow: 0 0 10px var(--Gradient-light-color-1);
   transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
-  }
-
-
-.option.wrong{
-  background-color: #e6707cc3 !important;
 }
-
+.option.wrong{
+  background-color: #e6707c92 !important;
+}
 .option.correct{
-  background-color: #9ee887b0 !important;
+  background-color: #9ee88792 !important;
+  color: #0eb427 !important;
 }
 
 

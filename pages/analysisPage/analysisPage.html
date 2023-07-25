@@ -33,7 +33,7 @@
         <section class="mainWindow">
             <div class="content">
                 <div class="image"></div>
-                <div class="dashboard hidden">
+                <div class="dashboard">
                     <div class="title"> You've completed the quiz! Thank you for your effort!
                     </div>
                     <div class="cols">
@@ -48,15 +48,6 @@
                                     40%
                                 </div>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                                <defs>
-                                    <linearGradient id="GradientColor">
-                                        <stop offset="0%" stop-color="#2b487d" />
-                                        <stop offset="100%" stop-color="var(--Gradient-dark-color-2)" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                            </svg>
                         </div>
                     </div>
                     <div class="buttons">
@@ -65,11 +56,12 @@
                     </div>
                 </div>
 
-                <div class=" main ">
+                <div class="hidden main">
                     <div class="header">
-                        <div class="score">100%</div>
+                        <div class="Home"><button class="BtnGradient">Home Page</button></div>
+                        <div class="score" id="score">100%</div>
                     </div>
-                    <div class=" dashboard graindent">
+                    <div class=" dashboard " id="secondDashboard">
 
                     </div>
                 </div>
