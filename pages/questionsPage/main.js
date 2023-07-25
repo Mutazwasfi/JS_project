@@ -1,3 +1,23 @@
+let islogedIn = JSON.parse(
+  localStorage.islogedIn ? localStorage.islogedIn : null
+);
+if (islogedIn && islogedIn != null) {
+  let NameDiv = document.createElement("div");
+  NameDiv.classList.add("LoginAnchor");
+  let firstName = JSON.parse(
+    localStorage.getItem(localStorage.currentUser)
+  ).name;
+  let text = document.createTextNode(`Welcome, ${firstName}`);
+  NameDiv.appendChild(text);
+
+  document.querySelector(".signinOptions").innerHTML = NameDiv.outerHTML;
+} else {
+  localStorage.islogedIn = false;
+}
+
+let attemptInfo = JSON.parse(localStorage.attemptInfo)
+
+
 const img = document.querySelector(".image");
 const timer = document.querySelector(".countDown");
 const question = document.querySelector(".question");
@@ -10,22 +30,19 @@ const startingContainer = document.querySelector(".starting");
 let attempt = {
   userAnswersIndex: [],
 };
-// let attempt =JSON.parse(localStorage.attemptInfo);
-let attemptInfo = {
-  startingTime: new Date(),
-  quizName: "java",
-  username: "mohmmad",
-  timeRequired: "20min",
-};
+
 let questions;
 // call the GetQuestions to fill the questions variable with the questions needed
 GetQuestions();
 
+// set an event listner for each option div
 let EachOption = options.querySelectorAll("div .option");
 EachOption.forEach((e) => {
   e.addEventListener("click", (e) => selectOption(e));
 });
 
+// a function that adds the selected css class to the clicked div and removes it from any other optin div that has it
+// and adds the avaiable class to the button and make it clickeable by adding the eventlisterner
 function selectOption(e) {
   options
     .querySelectorAll(".selected")
@@ -35,6 +52,10 @@ function selectOption(e) {
   NextBtn.addEventListener("click", next);
 }
 
+// next is called when an option is choosen so when clicked the index value of the div that has the class 'selected' is saved in an array to be saved later in the lcoal storage
+// and also chanegs the picture shown each time by taking the length of the saved answers array (the % 10 is so the values never exxced 10 because 11 % 10 is 1 which goes back to the begaining)
+// also is checks if the question has it last element by checking the second element if its not null then we still got more to go otherwise we done and the button should change from next to submit
+// after all this checking and changing it calls the resestquestion
 function next() {
   attempt.userAnswersIndex.push(
     Number(document.querySelector(".selected").classList[1].slice(3))
@@ -42,33 +63,33 @@ function next() {
   img.style.backgroundImage = `url(../../resoruces/images/questionimg${
     attempt.userAnswersIndex.length + (1 % 10)
   }.svg)`;
-  console.log(questions);
+
   if (typeof questions[1] === "undefined") {
     NextBtn.textContent = "Submit";
-    NextBtn.style.background ="linear-gradient(90deg, rgba(60,241,128,1) 0%, rgba(5,106,44,1) 100%)";
-    NextBtn.removeEventListener('click' , next)
-    NextBtn.addEventListener('click' , submitQuiz)
+    NextBtn.style.background =
+      "linear-gradient(90deg, rgba(60,241,128,1) 0%, rgba(5,106,44,1) 100%)";
+    NextBtn.removeEventListener("click", next);
+    NextBtn.addEventListener("click", submitQuiz);
   }
   resetQuestion();
-  startTheQuiz();
+  change();
 }
 
-function submitQuiz(){
-  let FinshingTime = new Date()
-  attempt.FinshingTime = FinshingTime;
-  localStorage.attempt = JSON.stringify(attempt)
-  window.location.href='../analysisPage/analysisPage.html';
-}
-
+//  this fucntion resests the classes and colors by removing the class from the options divs and the next btn and remves its click eevent listner so the user cant click before choosing 
 function resetQuestion() {
-  options
-    .querySelectorAll(".selected")
-    .forEach((e) => e.classList.remove("selected"));
+  options.querySelectorAll(".selected").forEach((e) => e.classList.remove("selected"));
   NextBtn.classList.remove("available");
   NextBtn.removeEventListener("click", next);
 }
 
-function startTheQuiz() {
+function submitQuiz() {
+  let FinshingTime = new Date();
+  attempt.FinshingTime = FinshingTime;
+  localStorage.attempt = JSON.stringify(attempt);
+  window.location.href = "../analysisPage/analysisPage.html";
+}
+
+function change() {
   setQuestion();
   setOptions();
 }
@@ -111,12 +132,14 @@ function setQuestion() {
 function setOptions() {
   let opts = options.querySelectorAll(".option");
   opts.forEach((e) => {
-    e.innerHTML = questions[0].options.shift();
+    e.textContent = questions[0].options.shift();
   });
   questions.shift();
 }
 
-function endOfquiz() {}
+function endOfquiz() {
+  
+}
 
 async function GetQuestions() {
   try {
@@ -146,7 +169,7 @@ async function chooseQuestions(str, n) {
 
   // filter out the randomly choosen qusetions
   selectedQuestions = questionsIndexes.map((i) => quizQuestion[i]);
-5
+  5;
   return selectedQuestions;
 }
 
@@ -162,14 +185,14 @@ function shuffleArray(array) {
 
 async function startCountDown() {
   let span = startingContainer.querySelector("span");
-  for (let i = 5; i > 0; i--) {
+  for (let i = 5; i > 1; i--) {
     span.textContent = i;
     await delay(1000);
   }
   container.classList.remove("hidden");
   startingContainer.remove();
   startTimer();
-  startTheQuiz();
+  change();
 }
 
 function delay(ms) {

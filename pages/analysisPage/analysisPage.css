@@ -6,129 +6,231 @@
   --Primery-light-color-1: #ffffff;
   --shadow-light-color: #787878;
   --error-color: #e91429;
+  --result: 0;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Exo 2", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: var(--Gradient-dark-color-2);
 }
 
 /* a class for the gradient effect we will use -which is 'Royal' gradient*/
 .graindent {
-background: linear-gradient(
-  to right,
-  var(--Gradient-dark-color-1),
-  var(--Gradient-dark-color-2)
-);
+  background: linear-gradient(
+    to right,
+    var(--Gradient-dark-color-1),
+    var(--Gradient-dark-color-2)
+  );
 }
-
+.BtnGradient {
+  background-color: var(--Gradient-light-color-1); /* Set initial background color */
+  background-image: linear-gradient(to right, #2b487d, var(--Gradient-dark-color-2));
+  color: var(--Primery-light-color-1) !important;
+}
+svg{
+  position: absolute;
+  top: -3%;
+  left: -3.5%;
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 /* Start navbar */
-
-
 nav {
-height: 3.5rem;
-background-color: var(--Primery-light-color-1);
-width: 100%;
-display: flex;
-justify-content: center;
-position: fixed;
-right: 0;
-top: 0;
+  height: 3.5rem;
+  background-color: var(--Primery-light-color-1);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
 }
 nav .contant {
-width: 85%;
-display: flex;
-justify-content: space-between;
-align-items: center;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 nav .contant .signinOptions {
-display: flex;
-width: min(15%, 120px);
-justify-content: space-between;
-white-space: nowrap;
+  display: flex;
+  width: min(15%, 120px);
+  justify-content: space-between;
+  white-space: nowrap;
 }
-nav .contant .signinOptions div{
-transition: transform .3s, text-shadow .3s;
+nav .contant .signinOptions div {
+  transition: transform 0.3s, text-shadow 0.3s;
 }
-nav .contant .signinOptions div:hover{
-transform: translateY(10%);
-text-shadow: -1px 1px 1px var(--shadow-light-color);
+nav .contant .signinOptions div:hover {
+  transform: translateY(10%);
+  text-shadow: -1px 1px 1px var(--shadow-light-color);
 }
-
 nav .contant .logo {
-cursor: default;
-font-size: 2rem;
-font-weight: 600;
-transition: text-shadow .3s ,transform .3s;
+  cursor: default;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: text-shadow 0.3s, transform 0.3s;
 }
-
-nav .contant a{
-text-decoration: none;
+nav .contant .logo:hover {
+  text-shadow: -2px 2px 2px var(--shadow-light-color);
 }
-
-nav .contant .logo:hover{
-text-shadow: -2px 2px 2px var(--shadow-light-color);
-}
-
 nav .contant .logo span {
-color: var(--Gradient-dark-color-1) !important;
-font-weight: 800;
+  color: var(--Gradient-dark-color-1) !important;
+  font-weight: 800;
+}
+/* End navbar */
+
+main {
+  padding-top: 4rem;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* End navbar */
+main .mainWindow {
+  width: 80%;
+  height: 90%;
+  background-color: var(--Primery-light-color-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: -5px 10px 10px -3px var(--shadow-light-color);
+}
+main .mainWindow .content {
+  width: 95%;
+  height: 95%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+main .mainWindow .content .image {
+  background: url(../../resoruces/images/dashboardpic.svg) no-repeat center /
+    contain;
+  transition: background-image 0.3s ease-in-out;
+}
+
+main .mainWindow .content .dashboard {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto 0;
+  background-color: #f8f7f7;
+}
+main .mainWindow .content .dashboard .title {
+  font-size: 5vmin;
+  font-weight: 600;
+}
+main .mainWindow .content .dashboard .cols{
+  display: flex;
+  justify-content: space-around;
+}
+main .mainWindow .content .dashboard .cols .text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+main .mainWindow .content .dashboard .cols .score{
+  width: 25vmin;
+  height: 25vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+circle{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 2vmin;
+  stroke-dasharray:472;
+  stroke-dashoffset: 472;
+  animation: animate 2s linear forwards;
+}
+.skills{
+  position: relative;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+}
+
+main .mainWindow .content .dashboard .buttons{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10vmin;
+}
+
+main .mainWindow .content .dashboard .buttons button{
+  cursor: pointer;
+  padding: 2.2vmin 0;
+  width: 12vw;
+  border-style: none;
+  border-radius: 20px;
+  font-weight: 600;
+  background-color: var(--Gradient-light-color-1);
+  color: var(--Gradient-dark-color-2);
+  transition: box-shadow 0.3s, transform 0.3s;
+  color: #fff;
+}
+main .mainWindow .content .dashboard .buttons button:hover{
+  transform: translateY(10%);
+  box-shadow: 0 0 10px var(--shadow-light-color);
+}
+
 
 
 /* This is for the main part of the page */
-
- main {
-  width: 100vw;
-  height: 100%;
-} 
-
+/* 
 .main {
-width: 80%;
-height: 80%;
-border-radius: 20px;
-display: flex;
-/* grid-template-rows: 1fr 5fr; */
-flex-direction: column;
-background-color: var(--Primery-light-color-1);
-/* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); */
-margin: 10%;
-margin-bottom: 5%;
-padding: 2%;
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  display: flex;
+  /* grid-template-rows: 1fr 5fr; 
+  flex-direction: column;
+  background-color: var(--Primery-light-color-1);
+  /* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); 
+  margin: 10%;
+  margin-bottom: 5%;
+  padding: 2%;
 }
 
 .dashBoard {
-display: grid;
-grid-template-columns: 1fr 1fr;
-align-content: center;
-background-color: var(--Gradient-light-color-1);
-/* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); */
-border-radius: 20px;
-width: 100%;
-height: 100%;
-padding: 2%;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  background-color: var(--Gradient-light-color-1);
+  /* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); 
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 2%;
 }
 
-/* Dashboard Picture  */
+/* Dashboard Picture  
 .resultPic {
-width: 100%;
-height: 100%;
-
+  width: 100%;
+  height: 100%;
 }
 
-/* This is for the upper part of the page  */
+/* This is for the upper part of the page  
 .dashBoardInfo {
   width: 100%;
   height: 80%;
@@ -139,37 +241,37 @@ height: 100%;
   padding: 1%;
 }
 
-/* This is for the name and sumbit portion  */
+/* This is for the name and sumbit portion  
 .dashLeft {
-display: grid;
-grid-template-columns: 1fr 1fr;
-align-items: center;
-justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
 }
 
-/* This is for score portion  */
+/* This is for score portion  
 
 .dashRight {
-display: grid;
-align-items: center;
-justify-content: center;
-padding-right: 15%;
-} 
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding-right: 15%;
+}
 
-/* This were we display the question for Anaylsis */
+/* This were we display the question for Anaylsis 
 .Questions {
   width: 100%;
   height: 100%;
   border-radius: 20px;
   display: none;
   background-color: var(--Gradient-light-color-1);
-  /* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); */
+  /* box-shadow: -5px 10px 10px -3px var(--shadow-light-color); 
   overflow: auto;
   padding: 1%;
   margin-top: 2%;
 }
 
-/* This is were the correct questions will show up */
+/* This is were the correct questions will show up 
 .corQ {
   border-radius: 20px;
   background-color: var(--Gradient-light-color-1);
@@ -178,19 +280,19 @@ padding-right: 15%;
   overflow: auto;
   padding: 2%;
   margin: 1% 1% 3% 1%;
-} 
+}
 
-
-/* the Buttons below the questions section */
+/* the Buttons below the questions section 
 
 .btns {
   display: flex;
   justify-content: space-between;
 }
 
-/* For the button below the questions review */
+/* For the button below the questions review 
 
-.resultBtnDiv , .logOutBtnDiv  {
+.resultBtnDiv,
+.logOutBtnDiv {
   cursor: pointer;
   padding: 2% 3%;
   margin: 3%;
@@ -205,7 +307,7 @@ padding-right: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+}
 
 button {
   border-style: none;
@@ -214,12 +316,11 @@ button {
 .homeBtn button:hover {
   transform: translate(10%);
   box-shadow: 0 0 10px var(--Gradient-dark-color-1);
-}
+} */
 
 /* End main */
 
 @media only screen and (max-width: 920px) {
-
   /* media query for main page */
   .dashBoard {
     display: grid;
@@ -228,51 +329,53 @@ button {
     font-size: 1.5vw;
     padding: 1%;
     padding-right: 8%;
-  } 
-
-/* This is for the info portion of the Dashboard  */
-.dashBoardInfo {
-   width: 100%;
-   height: 80%;
-   font-size: 1.5vw;
-   padding: 1%;
-}
-
-.resultPic {
-  padding-left: 15%;
-}
-
-.dashLeft {
-  padding-left: 20%;
-}
-
-.dashRight {
-  justify-content: center;
-  padding-left: 25%;
   }
-  
 
+  /* This is for the info portion of the Dashboard  */
+  .dashBoardInfo {
+    width: 100%;
+    height: 80%;
+    font-size: 1.5vw;
+    padding: 1%;
+  }
+
+  .resultPic {
+    padding-left: 15%;
+  }
+
+  .dashLeft {
+    padding-left: 20%;
+  }
+
+  .dashRight {
+    justify-content: center;
+    padding-left: 25%;
+  }
 
   /* media query for footer */
   .footer {
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      justify-content: center;
-      margin-bottom: 0%;
-  }
-  
-  .last{
-  padding: 5% 0 0 0;
-  font-size: 2vw;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 0%;
   }
 
-  .info{
-  padding: 2%;
-  text-align: center;
+  .last {
+    padding: 5% 0 0 0;
+    font-size: 2vw;
+    text-align: center;
   }
 
+  .info {
+    padding: 2%;
+    text-align: center;
+  }
 }
 
-/* End media query for footer */  
+/* End media query for footer */
+@keyframes animate{
+  100%{
+    stroke-dashoffset: var(--result);
+  }
+}

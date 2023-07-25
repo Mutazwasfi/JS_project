@@ -8,21 +8,21 @@ const BD = document.querySelector("#BirthDate");
 const PASSWORD = document.querySelector("#password");
 const SUBMITBTN = document.querySelector(".submitBtn");
 
-let namehasError ;
-let userNamehasError ;
-let emaihasError ;
-let passwordhasError ;
-let datehasError ;
+let namehasError = false;
+let userNamehasError = false;
+let emaihasError = false;
+let passwordhasError = false;
+let datehasError = false;
 
 // add an event function for the name input to activate when leaveing the input box (blur or lose fouce)
 NAME.addEventListener("blur", (e) => validateName(e.target));
 // a fucntion that validate the  name
 function validateName(e) {
   // check if the input field was left empty by invoking checkEmpty function
-  if (checkEmpty(e)){
+  if (checkEmpty(e)) {
     namehasError = true;
     return;
-  } 
+  }
   // this is the pattren that will check the input name .value and if it finds any match it returns true and if false it alerts the user by invoking alertWrong function
   // and only accpets letters
   let pattern = /^[a-zA-Z]+$/i;
@@ -39,10 +39,10 @@ function validateName(e) {
 //same as the prevouse function but the pattren is diffrent
 USERNAME.addEventListener("blur", (e) => validateUserName(e.target));
 function validateUserName(e) {
-  if (checkEmpty(e)){
+  if (checkEmpty(e)) {
     userNamehasError = true;
     return;
-  } 
+  }
 
   let pattern = /^[a-zA-Z0-9_.]+$/i;
   if (!USERNAME.value.match(pattern)) {
@@ -61,10 +61,10 @@ function validateUserName(e) {
 //same as the prevouse function but the pattren is diffrent
 EMAIL.addEventListener("blur", (e) => validateEmail(e.target));
 function validateEmail(e) {
-  if (checkEmpty(e)){
+  if (checkEmpty(e)) {
     emaihasError = true;
     return;
-  } 
+  }
 
   let pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   if (!EMAIL.value.match(pattern)) {
@@ -101,10 +101,10 @@ function validateDate(e) {
 //same as the prevouse function but the pattren is diffrent
 PASSWORD.addEventListener("blur", (e) => validatePassword(e.target));
 function validatePassword(e) {
-  if (checkEmpty(e)){
+  if (checkEmpty(e)) {
     passwordhasError = true;
     return;
-  } 
+  }
 
   let pattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,16}$/;
   if (!PASSWORD.value.match(pattern)) {
@@ -116,41 +116,30 @@ function validatePassword(e) {
     return;
   }
 
-
   if (passwordhasError) passwordhasError = removeError(PASSWORD);
 }
 
 // add an click event listner that checks if any of the hasError variables that were set prevousle in each valiadtion functions
 // and if everthing defined ANNND true it creaes an object and store it localy with the item name being the username of the user
-
 SUBMITBTN.addEventListener("click", (e) => {
   let signUp = true;
-  if (typeof namehasError === "undefined" || namehasError) {
-    console.log(namehasError);
-    validateName(NAME);
+  validateName(NAME);
+  validateUserName(USERNAME);
+  validateEmail(EMAIL);
+  validatePassword(PASSWORD);
+  validateDate(BD);
+
+  if (
+    namehasError ||
+    userNamehasError ||
+    emaihasError ||
+    passwordhasError ||
+    datehasError
+  ) {
     signUp = false;
   }
 
-  if (typeof userNamehasError === "undefined" || userNamehasError) {
-    validateUserName(USERNAME);
-    signUp = false;
-  }
-
-  if (typeof emaihasError === "undefined" || emaihasError) {
-    validateEmail(EMAIL);
-    signUp = false;
-  }
-
-  if (typeof passwordhasError === "undefined" || passwordhasError) {
-    validatePassword(PASSWORD);
-    signUp = false;
-  }
-
-  if (typeof datehasError === "undefined" || datehasError) {
-    validateDate(BD);
-    signUp = false;
-  }
-// creaes an object and store it localy with the item name being the lower cased username of the user and the other proprties 
+  // creaes an object and store it localy with the item name being the lower cased username of the user and the other proprties
   if (signUp) {
     let newuser = {};
     newuser.name = NAME.value;
@@ -165,9 +154,12 @@ SUBMITBTN.addEventListener("click", (e) => {
       JSON.stringify(newuser)
     );
     localStorage.currentUser = newuser.username.toLowerCase();
-    // localStorage.currentUser = JSON.stringify(newuser.name)
+    localStorage.islogedIn = "true";
+    console.log("huh?");
+    e.preventDefault();
+    window.location.href = "../homePage/homePage.html";
   } else {
-    console.log('falied')
+    console.log("falied");
     e.preventDefault();
   }
 });
