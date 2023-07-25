@@ -34,4 +34,18 @@ Upon completing the quiz or anytime during the quiz, the candidate can log out o
 
 We hope you find this Quiz Application user-friendly and beneficial for assessing candidates' knowledge and skills for various positions. Should you have any questions or feedback, please do not hesitate to contact our support team.
 
-Thank you for using the Quiz Application!
+Thank you for using the Quiz Application!  
+<br /><br />
+
+
+- Thara'a Bassam - (Scrum Master)
+- Rand AL-Wageei - (Product Owner)
+- Muhammad Shanrani
+- mu'taz Abu Yaquob
+- Mahmoud Aljabali
+
+ live link and 
+https://tharaa-bassam.github.io/project/
+
+a GitHub link
+https://github.com/tharaa-bassam/project
