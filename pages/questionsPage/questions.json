@@ -149,6 +149,310 @@
       ],
       "correct_answer_index": 1
     }
+  ],
+  "html": [
+    {
+      "question": "1. What does the HTML acronym stand for?",
+      "options": ["a) Hyperlinks and Text Markup Language", "b) Home Tool Markup Language", "c) Hypertext Markup Language", "d) Hyperlink Text Making Language"],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "2. Which HTML element is used to define the title of a webpage?",
+      "options": ["a) <title>", "b) <header>", "c) <h1>", "d) <meta>"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "3. What is the correct HTML element for inserting a line break?",
+      "options": ["a) <br>", "b) <break>", "c) <lb>", "d) <line-break>"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "4. What is the purpose of the 'alt' attribute in the <img> tag?",
+      "options": ["a) It specifies the alignment of the image.", "b) It sets the size of the image.", "c) It defines alternative text for the image.", "d) It links the image to another webpage."],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "5. Which HTML element is used to define the main content of the webpage?",
+      "options": ["a) <section>", "b) <main>", "c) <body>", "d) <content>"],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "6. What is the correct HTML element for creating a hyperlink?",
+      "options": ["a) <url>", "b) <link>", "c) <a>", "d) <hyperlink>"],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "7. Which HTML element is used to define an unordered list?",
+      "options": ["a) <list>", "b) <ol>", "c) <ul>", "d) <unordered-list>"],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "8. How can you open a link in a new tab/browser window?",
+      "options": ["a) <a href='url' target='_blank'>", "b) <a href='url' new-window>", "c) <a href='url' target='_new'>", "d) <a href='url' open='true'>"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "9. Which HTML element is used to define a table row?",
+      "options": ["a) <row>", "b) <tr>", "c) <td>", "d) <table-row>"],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "10. What is the purpose of the 'form' element in HTML?",
+      "options": ["a) It defines a dropdown list.", "b) It creates a form for user input.", "c) It specifies a section in a document.", "d) It sets the format for the webpage layout."],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "11. Which HTML element is used to define a navigation menu?",
+      "options": ["a) <nav>", "b) <navbar>", "c) <menu>", "d) <navigation>"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "12. What is the correct HTML element for inserting a horizontal line?",
+      "options": ["a) <hr>", "b) <line>", "c) <break>", "d) <horizontal>"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "13. How can you create a numbered list in HTML?",
+      "options": ["a) <ul>", "b) <list>", "c) <ol>", "d) <ordered-list>"],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "14. What is the purpose of the 'meta' element in HTML?",
+      "options": ["a) It defines the structure of the webpage.", "b) It provides a link to an external resource.", "c) It specifies the character encoding of the document.", "d) It sets the font size for the entire page."],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "15. Which HTML element is used to define the header for a webpage?",
+      "options": ["a) <head>", "b) <header>", "c) <h1>", "d) <title>"],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "16. What is the correct HTML element for creating a line break in a paragraph?",
+      "options": ["a) <break>", "b) <br>", "c) <lb>", "d) <line-break>"],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "17. Which HTML element is used to define a clickable button?",
+      "options": ["a) <button>", "b) <clickable>", "c) <click>", "d) <link-button>"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "18. How can you add a comment in HTML?",
+      "options": ["a) <!--This is a comment-->", "b) // This is a comment", "c) /* This is a comment */", "d) // This is a comment //"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "19. What is the correct HTML element for inserting an image?",
+      "options": ["a) <img>", "b) <image>", "c) <src>", "d) <picture>"],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "20. Which HTML element is used to define a footer for a webpage?",
+      "options": ["a) <bottom>", "b) <footer>", "c) <ftr>", "d) <end>"],
+      "correct_answer_index": 1
+    }
+  ],
+  "css": [
+    {
+      "question": "1. In CSS, which property is used to control the size of an element's content area, padding, and border?",
+      "options": [
+        "a) width",
+        "b) size",
+        "c) box-sizing",
+        "d) margin"
+      ],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "2. Which CSS property is used to control the vertical alignment of text within its container?",
+      "options": [
+        "a) text-align",
+        "b) vertical-align",
+        "c) align-content",
+        "d) line-height"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "3. What is the correct CSS syntax to apply a red color to the text of a paragraph?",
+      "options": [
+        "a) p { text-color: red; }",
+        "b) p { font-color: red; }",
+        "c) p { color: red; }",
+        "d) paragraph { color: red; }"
+      ],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "4. Which CSS property is used to add space between an element's border and its content?",
+      "options": [
+        "a) padding",
+        "b) margin",
+        "c) spacing",
+        "d) border-spacing"
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "5. In CSS, which property is used to change the font of an element?",
+      "options": [
+        "a) font-weight",
+        "b) font-family",
+        "c) text-font",
+        "d) font-style"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "6. Which CSS property is used to create rounded corners for an element?",
+      "options": [
+        "a) border-style",
+        "b) corner-radius",
+        "c) border-radius",
+        "d) corner-style"
+      ],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "7. What is the correct CSS syntax to select an element with the ID 'header'?",
+      "options": [
+        "a) .header",
+        "b) #header",
+        "c) header",
+        "d) *header"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "8. In CSS, which property is used to control the transparency of an element?",
+      "options": [
+        "a) opacity",
+        "b) transparent",
+        "c) visibility",
+        "d) display"
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "9. Which CSS property is used to add shadows to an element?",
+      "options": [
+        "a) shadow",
+        "b) box-shadow",
+        "c) text-shadow",
+        "d) element-shadow"
+      ],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "10. What is the correct CSS syntax to apply a background image to an element?",
+      "options": [
+        "a) background-img: url('image.jpg');",
+        "b) bg-image: url('image.jpg');",
+        "c) background-image: url('image.jpg');",
+        "d) img-src: url('image.jpg');"
+      ],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "11. Which CSS property is used to control the order of flexible items in a flex container?",
+      "options": [
+        "a) flex-order",
+        "b) order",
+        "c) flex-direction",
+        "d) flex-wrap"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "12. In CSS, which property is used to control the spacing between lines of text?",
+      "options": [
+        "a) line-spacing",
+        "b) line-height",
+        "c) text-spacing",
+        "d) spacing"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "13. What is the correct CSS syntax to apply a green color to a link when it is being hovered over?",
+      "options": [
+        "a) a:link { color: green; }",
+        "b) a:hover { color: green; }",
+        "c) a:active { color: green; }",
+        "d) a:visited { color: green; }"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "14. Which CSS property is used to control the alignment of an element along the inline axis?",
+      "options": [
+        "a) vertical-align",
+        "b) inline-align",
+        "c) inline-position",
+        "d) inline-style"
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "15. In CSS, which property is used to control the order of stacked elements in the z-axis?",
+      "options": [
+        "a) z-layer",
+        "b) z-index",
+        "c) z-position",
+        "d) z-order"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "16. Which CSS property is used to create columns in a multi-column layout?",
+      "options": [
+        "a) column-width",
+        "b) column-count",
+        "c) column-spacing",
+        "d) column-gap"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "17. What is the correct CSS syntax to change the text color of all <h1> elements?",
+      "options": [
+        "a) h1 { text-color: #000; }",
+        "b) h1 { color: #000; }",
+        "c) header1 { color: #000; }",
+        "d) h1 { text: #000; }"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "18. In CSS, which property is used to control the order of flex items when they wrap into multiple lines?",
+      "options": [
+        "a) flex-flow",
+        "b) flex-wrap",
+        "c) flex-direction",
+        "d) flex-line"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "19. What is the correct CSS syntax to apply a background color to all <p> elements with a class 'highlight'?",
+      "options": [
+        "a) p.highlight { background-color: #ccc; }",
+        "b) .highlight p { background-color: #ccc; }",
+        "c) p .highlight { background-color: #ccc; }",
+        "d) p:highlight { background-color: #ccc; }"
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "20. Which CSS property is used to control the space between cells in a table?",
+      "options": [
+        "a) cell-padding",
+        "b) cell-spacing",
+        "c) table-spacing",
+        "d) table-layout"
+      ],
+      "correct_answer_index": 1
+    }
   ]
 }
 
