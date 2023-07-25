@@ -141,7 +141,7 @@ main .content .buttons button{
   font-size:2.3vmin;
   font-weight: 600;
   border-style: none;
-  padding: 3.5vmin 6.5vmin;
+  padding: 3.5vmin 10vmin;
   border-radius: 40px;
   transition: box-shadow .3s, color .3s ,transform .3s , background-color .5s ease-in;
 }

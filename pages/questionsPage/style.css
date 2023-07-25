@@ -182,7 +182,6 @@ main .mainWindow .content .questions .main .options {
   align-items: center;
   justify-items: center;
 }
-
 main .mainWindow .content .questions .main .options .option {
   width: 95%;
   height: 90%;
@@ -203,14 +202,12 @@ main .mainWindow .content .questions .main .options .option:hover {
   transform: translateY(5%);
   box-shadow: 0 0 10px var(--shadow-light-color);
 }
-
 main .mainWindow .content .questions .footer {
   width: 90%;
   display: flex;
   justify-content: end;
   align-items: first baseline;
 }
-
 main .mainWindow .content .questions .footer button {
   cursor: pointer;
   padding: 2.2vmin 4vmin;

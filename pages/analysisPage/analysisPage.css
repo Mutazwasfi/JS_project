@@ -10,11 +10,32 @@
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   margin: 0;
   padding: 0;
   font-family: "Exo 2", sans-serif;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #d7ced9 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #d7ced9;
+    border-radius: 12px;
+    border: 0px solid #fcfcfc;
+  }
 
 html,
 body {
@@ -119,19 +140,21 @@ main .mainWindow .content {
   height: 95%;
   display: grid;
   grid-template-columns: 1fr 2fr;
+
 }
 main .mainWindow .content .image {
   background: url(../../resoruces/images/dashboardpic.svg) no-repeat center /
     contain;
   transition: background-image 0.3s ease-in-out;
 }
-
-main .mainWindow .content .dashboard {
+main .mainWindow  .content > .dashboard {
+  padding: 5vmin;
   height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: auto 0;
+  border-radius: 20px;
   background-color: #f8f7f7;
 }
 main .mainWindow .content .dashboard .title {
@@ -147,7 +170,6 @@ main .mainWindow .content .dashboard .cols .text{
   flex-direction: column;
   justify-content: space-around;
 }
-
 main .mainWindow .content .dashboard .cols .score{
   width: 25vmin;
   height: 25vmin;
@@ -156,7 +178,6 @@ main .mainWindow .content .dashboard .cols .score{
   align-items: center;
   position: relative;
 }
-
 circle{
   fill: none;
   stroke: url(#GradientColor);
@@ -170,13 +191,11 @@ circle{
   background-color: #d3d3d3;
   border-radius: 50%;
 }
-
 main .mainWindow .content .dashboard .buttons{
   display: flex;
   justify-content: space-around;
   padding-top: 10vmin;
 }
-
 main .mainWindow .content .dashboard .buttons button{
   cursor: pointer;
   padding: 2.2vmin 0;
@@ -193,6 +212,120 @@ main .mainWindow .content .dashboard .buttons button:hover{
   transform: translateY(10%);
   box-shadow: 0 0 10px var(--shadow-light-color);
 }
+main .mainWindow .content .main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .mainWindow .content .main .header{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+main .mainWindow .content .main .header .score{
+  width: 20%;
+  padding: 2vmin;
+  /* margin-top: 1vmin; */
+  background-color: #f8f7f7;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 3.5vmin;
+  font-weight: 600;
+
+}
+main .mainWindow .content .main .dashboard{
+  width: 100%;
+  overflow-y: auto;
+  height: 80%;
+  border-radius: 20px;
+  padding: 1vmin;
+  background-color: #787878;
+}
+main .mainWindow .content .main .dashboard .filler{
+  height: 2vmin;
+}
+
+main .mainWindow .content .main .dashboard .questions{
+  background-color:#fff;
+  border-radius: 20px;
+  height: 97%;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hidden{
+  display: none !important;
+}
+
+main .mainWindow .content .main .dashboard .questions .question {
+  background-color: #fcfcfc;
+  width: 70%;
+  height: 30%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: min(2.5vmin, 1.3rem);
+  font-weight: 400;
+  color: var(--Gradient-dark-color-2);
+  box-shadow: 0 0 10px var(--Gradient-light-color-1);
+}
+
+main .mainWindow .content .main .dashboard .questions .options{
+    width: 80%;
+    height: 50%;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+.questions .options .option{
+  width: 95%;
+  height: 90%;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: min(2.5vmin, 3rem);
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: var(--secondry-light-color-2);
+  color: var(--Gradient-dark-color-2);
+  box-shadow: 0 0 10px var(--Gradient-light-color-1);
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+  }
+
+
+.option.wrong{
+  background-color: #e6707cc3 !important;
+}
+
+.option.correct{
+  background-color: #9ee887b0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,15 +1,14 @@
 // // Get references to the button and the questions section
-let showBtn = document.querySelector(".resultBtn");
-let questionDiv = document.querySelector(".Questions");
+let showBtn = document.querySelector(".ReviewAnswers button");
 
-
+let attempt = JSON.parse(localStorage.attempt);
+let attemptInfo = JSON.parse(localStorage.attemptInfo);
 
 let islogedIn = JSON.parse(
   localStorage.islogedIn ? localStorage.islogedIn : null
 );
-if (islogedIn && islogedIn != null) {
+if (islogedIn) {
   let NameDiv = document.createElement("div");
-  NameDiv.classList.add("LoginAnchor");
   let firstName = JSON.parse(
     localStorage.getItem(localStorage.currentUser)
   ).name;
@@ -21,42 +20,39 @@ if (islogedIn && islogedIn != null) {
   localStorage.islogedIn = false;
 }
 
+let TimeSpan = document.querySelector(".sub-title span");
+TimeSpan.textContent = TimeTaken();
 
+let HomeBtn = document.querySelector(".Home button");
+HomeBtn.addEventListener("click", logOut);
+function logOut() {
+  let user = JSON.parse(localStorage.getItem(localStorage.currentUser));
+  let attemptedQuiz = {
+    TimeTaken: TimeTaken(),
+    questionsIndices: attempt.questionsIndexes,
+    userAnswersIndex: attempt.Answersindices,
+    quizName: user.position,
+  };
 
+  user.PrevouseAttemptedQuiz = attemptedQuiz;
+  localStorage.setItem(user.username.toLowerCase(), JSON.stringify(user));
+  localStorage.islogedIn = "false";
+  window.location.href = "../homePage/homePage.html";
+}
 
 showBtn.addEventListener("click", () => {
-  questionDiv.style.display = "grid";
   filler();
 });
 
-function filler() {
-  // let questionConatainer = document.createElement
-  if(!selectedQuestions) GetQuestions()
-  console.log(selectedQuestions)
-  
-  for (let i in selectedQuestions) {
-    const listContainer = document.querySelector(".corQ");
-    const dl = document.createElement("dl");
-    const dt = document.createElement("dt");
-    let question = selectedQuestions[i].question;
-    dt.textContent = question;
-    dl.appendChild(dt);
-    for (let j = 0; j < 4; j++) {
-      const dd = document.createElement("dd");
-      dd.textContent = selectedQuestions[i].options[j];
-      dt.appendChild(dd);
-    }
-    listContainer.appendChild(dl);
-  }
-}
-GetQuestions();
+function filler() {}
 let result;
 
 let selectedQuestions;
+GetQuestions();
 
 async function GetQuestions() {
   try {
-    selectedQuestions = await retreiveQuestion("java");
+    selectedQuestions = await retreiveQuestion(attemptInfo.quizName);
   } catch (error) {
     console.error(error);
   }
@@ -68,10 +64,25 @@ async function retreiveQuestion(str) {
   let quizQuestion = questionFile[str];
 
   // stores the choosen questions indexs in atempt object to be stored later in local storage
-  questionsIndices = JSON.parse(localStorage.attempt).questionsIndexes;
+  let questionsIndices = attempt.questionsIndexes;
   selectedQuestions = questionsIndices.map((e) => quizQuestion[e]);
-  result = getResult();
+  let resultSpan = document.querySelector(".answers span");
+  resultSpan.textContent = `${getResult()} out of ${selectedQuestions.length}`;
+  let percentage = (document.querySelector("#number").textContent = `${
+    (getResult() / selectedQuestions.length) * 100
+  }%`);
 }
+function TimeTaken() {
+  let startingtime = attemptInfo.startingTime;
+  let finishingTime = attempt.FinshingTime;
+
+  let timeTakenValue = new Date(finishingTime) - new Date(startingtime);
+  let mins = Math.floor(timeTakenValue / 60000);
+  let secs = Math.floor((timeTakenValue % 60000) / 1000);
+
+  return `${mins}:${secs - 5}`;
+}
+
 function getResult() {
   let Answersindices = JSON.parse(localStorage.attempt).userAnswersIndex;
   let total = 0;
@@ -80,19 +91,3 @@ function getResult() {
   });
   return total;
 }
-
-
-
-let Namediv = document.querySelector(".fName");
-let attempt = JSON.parse(localStorage.attempt);
-let attemptInfo = JSON.parse(localStorage.attemptInfo);
-let Name = attemptInfo.username;
-Namediv.textContent = `Wlecome, ${Name}`;
-let startingtime = attemptInfo.startingTime;
-let finishingTime = attempt.FinshingTime;
-
-
-TimeTaken = document.querySelector(".attemptDate");
-TimeTaken.textContent = new Date(finishingTime) - new Date(startingtime);
-
-
