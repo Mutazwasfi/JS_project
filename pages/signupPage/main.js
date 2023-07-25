@@ -1,3 +1,7 @@
+if(JSON.parse(localStorage.islogedIn)){
+  window.location.href = "../homePage/homePage.html";
+}
+
 // define all the dom elemnt needed and assign them to variables
 const NAME = document.querySelector("#name");
 const USERNAME = document.querySelector("#userName");
@@ -157,7 +161,7 @@ SUBMITBTN.addEventListener("click", (e) => {
     localStorage.islogedIn = "true";
     console.log("huh?");
     e.preventDefault();
-    window.location.href = "../homePage/homePage.html";
+    window.location.href = "../previewPage/previewPage.html";
   } else {
     console.log("falied");
     e.preventDefault();
